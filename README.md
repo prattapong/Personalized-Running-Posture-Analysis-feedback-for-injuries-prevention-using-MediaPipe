@@ -79,10 +79,10 @@ This script will:
 
 ### Step 2: Upload best_model.pth manually
 
-Before running the app, you must upload or move your trained model file (best_model.pth) to the following directory:
+Before running the app, you must upload or move your trained model file (best_model.pth) to the directory and edit the model directoy in:
 
-```swift
-C:/Users/User/OneDrive/Desktop/Deepproject/MODEL/best_model.pth
+```python
+model_dir = 'C:/Users/User/OneDrive/Desktop/Deepproject/MODEL'
 ```
 ⚠️ If this file is missing, the app will not work.
 
