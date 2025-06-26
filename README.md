@@ -60,7 +60,7 @@ OPENAI_API_KEY=sk-xxxxx
 
 ## How to Run the System
 
-### 1. Step 1: Train the Autoencoder (if not already trained)
+### Step 1: Train the Autoencoder (if not already trained)
 
 Run the following command to process elite runner videos and train the model:
 
@@ -77,102 +77,47 @@ This script will:
 
 > You can modify this script to use your own videos or elite datasets.
 
----
+### Step 2: Upload best_model.pth manually
 
-## 📊 Dashboard Features (Streamlit)
+Before running the app, you must upload or move your trained model file (best_model.pth) to the following directory:
 
-- **Live Predictions**: Delay probability shown for each flight.
-- **Recent Flights Table**: Shows scheduled/actual times, delay status, etc.
-- **Metrics Cards**: Accuracy, delay rate, precision, recall, average delay.
-- **Charts**:
-  - Top departure/arrival airports
-  - Delay heatmap by hour
-  - Airline performance comparison
-  - Delay probability time series
+```swift
+C:/Users/User/OneDrive/Desktop/Deepproject/MODEL/best_model.pth
+```
+⚠️ If this file is missing, the app will not work.
 
----
+### Step 3: Launch the Streamlit Web App
 
-## 🛠️ Feature Engineering
-
-Each Kafka message (flight) is converted to features:
-
-- `dep_airport`, `arr_airport`
-- `dep_terminal`, `arr_terminal`
-- `airline`, `route`
-- `hour`, `day_of_week`
-- Label: `1` if arrival delay > 0 else `0`
-
----
-
-## ✅ Performance Metrics
-
-Metrics are updated in real-time as labeled flight data becomes available:
-
-- **Accuracy**: % of correct predictions
-- **Precision**: % of predicted delays that were actually delayed
-- **Recall**: % of actual delays that were correctly predicted
-- **Delay Rate**: % of total flights delayed
-
----
-
-## 📈 Sample API Message (Kafka Producer)
-
-```json
-{
-  "key": "EK313",
-  "value": {
-    "flight_date": "2025-06-18",
-    "flight_status": "active",
-    "departure": {
-      "airport": "Haneda Airport", "timezone": "Asia/Tokyo", "iata": "HND",
-      "icao": "RJTT", "terminal": "3", "gate": "109","delay": 37,
-      "scheduled": "2025-06-18T00:05:00+00:00",
-      "estimated": "2025-06-18T00:05:00+00:00",
-      "actual": "2025-06-18T00:42:00+00:00",
-      "estimated_runway": "2025-06-18T00:42:00+00:00",
-      "actual_runway": "2025-06-18T00:42:00+00:00"
-    },
-    "arrival": {
-      "airport": "Dubai", "timezone": "Asia/Dubai", "iata": "DXB",
-      "icao": "OMDB", "terminal": "3", "gate": null, "delay": 3, "baggage": "1",
-      "scheduled": "2025-06-18T05:45:00+00:00",
-      "estimated": "2025-06-18T05:48:00+00:00",
-      "actual": null, "estimated_runway": null, "actual_runway": null
-    },
-    "airline": {
-      "name": "Emirates", "iata": "EK", "icao": "UAE"
-    },
-    "flight": {
-      "number": "313", "iata": "EK313", "icao": "UAE313", "codeshared": null
-    },
-    "aircraft": null,
-    "live": null
-  }
-}
+```bash
+streamlit run app.py
 ```
 
----
-
-## 🔮 Future Improvements
-
-- 🧪 Try advanced classifiers: `HoeffdingTree`, `SGDClassifier`, etc.
-- 🧠 Optimizers: Experiment with `Adam`, `RMSProp`, etc.
-- 🔧 Hyperparameter tuning with `SuccessiveHalvingClassifier`
-- 🌤 Integrate external features like weather, holidays
-- 📦 Store model state and historical predictions
+Then open http://localhost:8501 in your browser.
+The app allows users to:
+- Upload running videos
+- Analyze gait features in real time
+- Compare their motion with elite runners
+- View GPT-generated natural language feedback organized by gait phase
 
 ---
 
 ## 🧑‍💻 Contributors
 
-- Rattapong Pojpatinya  
-- Tuksaporn Chaiyaraks  
-- Pakawat Naktubtee  
-- Kanpitcha Panbualuang  
-- Kittitat Wattanasuntikul
+**Graduate School of Applied Statistics, National Institute of Development Administration (NIDA)**
+- Rattapong Pojpatinya — 6620422008@stu.nida.ac.th
+- Tuksaporn Chaiyaraks — 6620422013@stu.nida.ac.th
+- Pakawat Naktubtee — 6620422021@stu.nida.ac.th
+- Kanpitcha Panbualuang — 6620422024@stu.nida.ac.th
+- Kittitat Wattanasuntikul — 6620422025@stu.nida.ac.th
+- **Advisor**: Dr. Thitirat Siriborvornratanakul — thitirat@as.nida.ac.th
 
 ---
 
 ## 📜 License
 
 This project is for educational and research purposes. Contact the authors for permission if you'd like to use this in production.
+
+---
+
+## 🔑 Keywords
+Pose estimation, Biomechanics, Gait analysis, Running injury prevention, MediaPipe, Autoencoder, Generative AI, DTW, GPT-4, Running form feedback
