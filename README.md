@@ -7,7 +7,7 @@ This project provides an intelligent and accessible system for analyzing running
 
 Running is one of the most common forms of physical activity, but many amateur runners unknowingly adopt poor movement patterns that increase the risk of injury. Traditionally, analyzing a runner’s form requires expensive hardware and expert supervision. This project addresses these challenges by offering an AI-powered video-based tool that can:
 
-- Extract 2D body landmarks using MediaPipe
+- Extract body landmarks using MediaPipe
 - Calculate biomechanical metrics like joint angles, trunk lean, stride width, and arm swing
 - Detect and segment gait cycles (Initial Contact, Mid Stance, Swing Phase, Toe Off)
 - Normalize and compare motion with elite runners using Cosine Similarity, Dynamic Time Warping (DTW), and a trained Autoencoder
