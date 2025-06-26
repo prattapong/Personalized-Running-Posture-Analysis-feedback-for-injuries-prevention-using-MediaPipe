@@ -10,7 +10,7 @@ Running is one of the most common forms of physical activity, but many amateur r
 - Extract body landmarks using MediaPipe
 - Calculate biomechanical metrics like joint angles, trunk lean, stride width, and arm swing
 - Detect and segment gait cycles (Initial Contact, Mid Stance, Swing Phase, Toe Off)
-- Normalize and compare motion with elite runners using Cosine Similarity, Dynamic Time Warping (DTW), and a trained Autoencoder
+- Normalize and compare motion with elite runners using Cosine Similarity, Statistic Deviation, Dynamic Time Warping (DTW), and a trained Autoencoder
 - Generate phase-specific natural language feedback using OpenAI’s GPT tailored to each runner's movement profile
 
 This tool helps runners self-assess their form and receive actionable insights using just a single video and modern AI techniques.
@@ -23,7 +23,7 @@ This tool helps runners self-assess their form and receive actionable insights u
 - **PyTorch** – Autoencoder model for anomaly detection
 - **OpenAI GPT API** – For generating personalized feedback
 - **Streamlit** – User-friendly web interface
-- **Dynamic Time Warping (DTW) and Cosine Similarity** – Biomechanical comparison
+- **Dynamic Time Warping (DTW), Statistic Deviation, and Cosine Similarity** – Biomechanical comparison
 - **Pandas / NumPy / SciPy / Matplotlib** – Data processing and visualization
 
 ---
