@@ -1,0 +1,13 @@
+numpy
+pandas
+torch
+scipy
+opencv-python
+mediapipe
+matplotlib
+scikit-learn
+tqdm
+openai
+seaborn
+python-dotenv
+pillow
