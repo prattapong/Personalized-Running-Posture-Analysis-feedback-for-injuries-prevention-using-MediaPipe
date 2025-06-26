@@ -101,6 +101,13 @@ The app allows users to:
 
 ---
 
+## Results
+![image](https://github.com/user-attachments/assets/08697210-9be1-4f97-a29e-d767f3241abc)
+![image](https://github.com/user-attachments/assets/8aa02521-cd9d-46b8-b6cf-039305e5faff)
+![image](https://github.com/user-attachments/assets/315e247b-45a2-4191-8599-e78848c00d0b)
+
+---
+
 ## 🧑‍💻 Contributors
 
 **Graduate School of Applied Statistics, National Institute of Development Administration (NIDA)**
